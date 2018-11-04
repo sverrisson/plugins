@@ -32,7 +32,7 @@ class DurationRange {
   String toString() => '$runtimeType(start: $start, end: $end)';
 }
 
-/// The duration, current position, buffering state, error state and settings
+/// The duration, current position, buffering state, isLive, error state and settings
 /// of a [VideoPlayerController].
 class VideoPlayerValue {
   VideoPlayerValue({
@@ -44,6 +44,7 @@ class VideoPlayerValue {
     this.isLooping = false,
     this.isBuffering = false,
     this.volume = 1.0,
+    this.isLive = false,
     this.errorDescription,
   });
 
@@ -75,6 +76,9 @@ class VideoPlayerValue {
   /// The current volume of the playback.
   final double volume;
 
+  /// The current videostream is Live.
+  final bool isLive;
+
   /// A description of the error if present.
   ///
   /// If [hasError] is false this is [null].
@@ -98,6 +102,7 @@ class VideoPlayerValue {
     bool isLooping,
     bool isBuffering,
     double volume,
+    bool isLive,
     String errorDescription,
   }) {
     return VideoPlayerValue(
@@ -109,6 +114,7 @@ class VideoPlayerValue {
       isLooping: isLooping ?? this.isLooping,
       isBuffering: isBuffering ?? this.isBuffering,
       volume: volume ?? this.volume,
+      isLive: isLive ?? this.isLive,
       errorDescription: errorDescription ?? this.errorDescription,
     );
   }
@@ -124,6 +130,7 @@ class VideoPlayerValue {
         'isLooping: $isLooping, '
         'isBuffering: $isBuffering'
         'volume: $volume, '
+        'isLive: $isLive, '
         'errorDescription: $errorDescription)';
   }
 }

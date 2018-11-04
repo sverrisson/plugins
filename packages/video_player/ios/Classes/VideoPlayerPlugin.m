@@ -242,6 +242,10 @@ static void* playbackBufferFullContext = &playbackBufferFullContext;
   _player.volume = (volume < 0.0) ? 0.0 : ((volume > 1.0) ? 1.0 : volume);
 }
 
+- (bool)isLive {
+  return CMTIME_IS_INDEFINITE([[_player currentItem] duration]);
+}
+
 - (CVPixelBufferRef)copyPixelBuffer {
   CMTime outputItemTime = [_videoOutput itemTimeForHostTime:CACurrentMediaTime()];
   if ([_videoOutput hasNewPixelBufferForItemTime:outputItemTime]) {

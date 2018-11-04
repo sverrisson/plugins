@@ -215,6 +215,10 @@ public class VideoPlayerPlugin implements MethodCallHandler {
       return exoPlayer.getCurrentPosition();
     }
 
+    boolean isLive() {
+      return exoPlayer.isCurrentWindowDynamic();
+    }
+
     private void sendInitialized() {
       if (isInitialized) {
         Map<String, Object> event = new HashMap<>();
@@ -371,6 +375,9 @@ public class VideoPlayerPlugin implements MethodCallHandler {
         break;
       case "position":
         result.success(player.getPosition());
+        break;
+      case "live":
+        result.success(player.isLive());
         break;
       case "dispose":
         player.dispose();
