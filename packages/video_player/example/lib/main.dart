@@ -380,7 +380,7 @@ void main() {
               Column(
                 children: <Widget>[
                   NetworkPlayerLifeCycle(
-                    'http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_20mb.mp4',
+                    'http://sip-live.hds.adaptive.level3.net/hls-live/ruv-ras1/_definst_/live.m3u8',
                     (BuildContext context, VideoPlayerController controller) =>
                         AspectRatioVideo(controller),
                   ),
@@ -388,14 +388,14 @@ void main() {
                     padding: const EdgeInsets.only(top: 20.0),
                   ),
                   NetworkPlayerLifeCycle(
-                    'http://184.72.239.149/vod/smil:BigBuckBunny.smil/playlist.m3u8',
+                    'http://sip-live.hds.adaptive.level3.net/hls-live/ruv-ras1/_definst_/live.m3u8',
                     (BuildContext context, VideoPlayerController controller) =>
                         AspectRatioVideo(controller),
                   ),
                 ],
               ),
               NetworkPlayerLifeCycle(
-                'http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_20mb.mp4',
+                'http://sip-live.hds.adaptive.level3.net/hls-live/ruv-ras1/_definst_/live.m3u8',
                 (BuildContext context, VideoPlayerController controller) =>
                     AspectRatioVideo(controller),
               ),
