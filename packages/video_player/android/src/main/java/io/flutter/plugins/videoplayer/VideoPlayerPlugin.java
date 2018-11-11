@@ -164,14 +164,15 @@ public class VideoPlayerPlugin implements MethodCallHandler {
                 event.put("event", "bufferingStart");
                 eventSink.success(event);
               } else if (playbackState == Player.STATE_READY) {
-              if (!isInitialized) {
-                isInitialized = true;
-                sendInitialized();
-              }
-              if (eventSink != null) {
-                Map<String, Object> event = new HashMap<>();
-                event.put("event", "bufferingEnd");
-                eventSink.success(event);
+                if (!isInitialized) {
+                  isInitialized = true;
+                  sendInitialized();
+                }
+                if (eventSink != null) {
+                  Map<String, Object> event = new HashMap<>();
+                  event.put("event", "bufferingEnd");
+                  eventSink.success(event);
+                }
               }
             }
 
